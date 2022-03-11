@@ -33,5 +33,7 @@ void cleanNeg (int array[], int array_size);
 void sorting(t_stack *a, int input_size);
 void sortTwo(t_stack *a);
 void sortThree_step1(t_stack *a);
-void sortThree_step2(int aA, int aB, int aC);
+void sortThree_step2(t_stack *a, int aA, int aB, int aC);
+void sortFour_step1(t_stack *a);
+void sortFour_step2(t_stack *a, t_stack *b);
 #endif

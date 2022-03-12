@@ -19,6 +19,10 @@ void sorting(t_stack *a, int input_size){
     sortFive_step1(a);
     return;
   }
+  if (input_size > 5){
+    radix_step1(a, input_size);
+    return;
+  }
 }
 
 void sortTwo(t_stack *a){
@@ -80,11 +84,12 @@ void sortThree_step2(t_stack *a, int aA, int aB, int aC){
 }
 
 void sortFour_step1(t_stack *a){
-  t_stack *b;
+  t_stack b;
+  b.head = NULL;
   write(1, "pb\n", 3);
-  pb(a, b);
+  pb(a, &b);
   sortThree_step1(a);
-  sortFour_step2(a, b);
+  sortFour_step2(a, &b);
 }
 
 void sortFour_step2(t_stack *a, t_stack *b){
@@ -121,14 +126,15 @@ void sortFour_step2(t_stack *a, t_stack *b){
 }
 
 void sortFive_step1(t_stack *a){
-  t_stack *b;
+  t_stack b;
+  b.head = NULL;
   write(1, "pb\n", 3);
-  pb(a, b);
+  pb(a, &b);
   write(1, "pb\n", 3);
-  pb(a, b);
+  pb(a, &b);
   sortThree_step1(a);
-  sortFour_step2(a, b);
-  sortFive_step2(a, b);
+  sortFour_step2(a, &b);
+  sortFive_step2(a, &b);
 }
 
 void sortFive_step2(t_stack *a, t_stack *b){
@@ -153,26 +159,68 @@ void sortFive_step2(t_stack *a, t_stack *b){
   }
   if(b->head->content >= a->head->next->content && b->head->content <= a->head->next->next->content){
     write(1, "ra\n", 3);
-    ra(a, b);
+    ra(a);
     write(1, "ra\n", 3);
-    ra(a, b);
+    ra(a);
     write(1, "sa\n", 3);
-    pa(a);
+    pa(a, b);
     write(1, "rra\n", 3);
-    rra(a, b);
+    rra(a);
     write(1, "rra\n", 3);
-    rra(a, b);
+    rra(a);
     return;
   }
   if(b->head->content >= a->head->next->next->content && b->head->content <= a->tail->content){
     write(1, "rra\n", 3);
-    rra(a, b);
+    rra(a);
     write(1, "pa\n", 3);
     pa(a, b);
     write(1, "ra\n", 3);
     ra(a);
     write(1, "ra\n", 3);
-    ra(a, b);
+    ra(a);
     return;
+  }
+}
+
+void radix_step1(t_stack *a, int input_size){
+  t_stack b;
+  b.head = NULL;
+  radix_step2(a, &b, input_size);
+}
+void radix_step2(t_stack *a, t_stack *b, int input_size){
+  t_int *temp;
+  int check;
+  int i;
+  int j;
+
+  temp = a->head;
+  check = input_size;
+  i = 0;
+  j = 0;
+  while(temp)
+  {
+    if (temp->content < check){
+      check = temp->content;
+      j = i;
+    }
+    i++;
+    temp = temp->next;
+  }
+  while(j > 0){
+    write(1, "ra\n", 3);
+    ra(a);
+    j--;
+  }
+  write(1, "pb\n", 3);
+  pb(a, b);
+  if (a->head->next)
+    radix_step2(a, b, input_size);
+  else{
+    while(input_size > 1){
+      write(1, "pa\n", 3);
+      pa(a, b);
+      input_size--;
+    }
   }
 }

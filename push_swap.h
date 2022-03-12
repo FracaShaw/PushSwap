@@ -36,4 +36,8 @@ void sortThree_step1(t_stack *a);
 void sortThree_step2(t_stack *a, int aA, int aB, int aC);
 void sortFour_step1(t_stack *a);
 void sortFour_step2(t_stack *a, t_stack *b);
+void sortFive_step1(t_stack *a);
+void sortFive_step2(t_stack *a, t_stack *b);
+void radix_step1(t_stack *a, int input_size);
+void radix_step2(t_stack *a, t_stack *b, int input_size);
 #endif

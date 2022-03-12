@@ -5,7 +5,10 @@ void pb(t_stack *a, t_stack *b){
 	t_int	*temp;
 
 	temp = a->head->next;
-	a->head->next = b->head;
+	if (b)
+		a->head->next = b->head;
+	else
+		a->head->next = NULL;
 	b->head = a->head;
 	a->head = temp;
 	temp = b->head;

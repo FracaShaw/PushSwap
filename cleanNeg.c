@@ -1,28 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cleanNeg.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:12:22 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 19:19:28 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void bubbleSort (int array[], int array_size)
+void	bubblesort(int array[], int array_size)
 {
-	int i; 
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
-    for (i = 0; i < (array_size - 1); ++i)
-    {
-        for (j = 0; j < array_size - 1 - i; ++j )
-        {
-            if (array[j] > array[j+1])
-            {
-                temp = array[j+1];
-                array[j+1] = array[j];
-                array[j] = temp;
-            }
-        }
-    }
+	i = 0;
+	while (i < (array_size - 1))
+	{
+		j = 0;
+		while (j < (array_size - 1 - i))
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j + 1];
+				array[j + 1] = array[j];
+				array[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
-void cpyArrayInt (int array[], int arrayCpy[], int array_size)
+void	cpyarrayint(int array[], int arrayCpy[], int array_size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < array_size)
@@ -32,27 +48,27 @@ void cpyArrayInt (int array[], int arrayCpy[], int array_size)
 	}
 }
 
-void cleanNeg (int array[], int array_size)
+void	cleanneg(int array[], int array_size)
 {
-	int *arrayCpy;
-	int i;
-	int j;
+	int	*arraycpy;
+	int	i;
+	int	j;
 
-	arrayCpy = malloc(sizeof(*arrayCpy) * array_size);
-	cpyArrayInt(array, arrayCpy, array_size);
-	bubbleSort(arrayCpy, array_size);
+	arraycpy = malloc(sizeof(*arraycpy) * array_size);
+	cpyarrayint(array, arraycpy, array_size);
+	bubblesort(arraycpy, array_size);
 	i = 0;
-	while(i < array_size)
+	while (i < array_size)
 	{
 		j = 0;
-		while (array[i] != arrayCpy[j] && j < array_size)
+		while (array[i] != arraycpy[j] && j < array_size)
 		{
 			j++;
 		}
 		array[i] = j;
 		i++;
-	} 
-	free(arrayCpy);
+	}
+	free(arraycpy);
 }
 /*
 #include <stdio.h>

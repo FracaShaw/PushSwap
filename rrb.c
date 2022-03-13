@@ -1,17 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rrb.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:25:32 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 19:26:01 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void rrb(t_stack *b){
-    t_int *temp;
-    b->tail->next = b->head;
-    b->head = b->tail;
-    temp = b->head;
-    while(temp->next != b->tail)
-    {
-        temp = temp->next;
-    }
-    b->tail = temp;
-    b->tail->next = NULL;
+void	rrb(t_stack *b)
+{
+	t_int	*temp;
+
+	b->tail->next = b->head;
+	b->head = b->tail;
+	temp = b->head;
+	while (temp->next != b->tail)
+	{
+		temp = temp->next;
+	}
+	b->tail = temp;
+	b->tail->next = NULL;
 }
 /*
 int main(int argc, char *argv[])

@@ -1,17 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rra.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:24:49 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 19:25:25 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void rra(t_stack *a){
-    t_int *temp;
-    a->tail->next = a->head;
-    a->head = a->tail;
-    temp = a->head;
-    while(temp->next != a->tail)
-    {
-        temp = temp->next;
-    }
-    a->tail = temp;
-    a->tail->next = NULL;
+void	rra(t_stack *a)
+{
+	t_int	*temp;
+
+	a->tail->next = a->head;
+	a->head = a->tail;
+	temp = a->head;
+	while (temp->next != a->tail)
+	{
+		temp = temp->next;
+	}
+	a->tail = temp;
+	a->tail->next = NULL;
 }
 /*
 int main(int argc, char *argv[])

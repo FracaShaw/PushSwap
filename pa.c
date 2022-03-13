@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pa.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:21:45 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 19:21:50 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void pa(t_stack *a, t_stack *b){
+void	pa(t_stack *a, t_stack *b)
+{
 	t_int	*temp;
 
 	temp = b->head->next;
@@ -9,7 +22,7 @@ void pa(t_stack *a, t_stack *b){
 	a->head = b->head;
 	b->head = temp;
 	temp = a->head;
-	while(temp->next)
+	while (temp->next)
 	{
 		temp = temp->next;
 	}

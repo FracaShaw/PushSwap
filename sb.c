@@ -1,25 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:27:45 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 20:34:45 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void sb(t_stack *b){
-    if (b->head){
-        if (b->head->next){
-            t_int *temp;
-            t_int *temp1;
-            temp = b->head;
-            temp1 = b->head->next->next;
-            b->head = b->head->next;
-            b->head->next = temp;
-            b->head->next->next = temp1;
-        temp = b->head;
-        while(temp->next)
-        {
-            temp = temp->next;
-        }
-        b->tail = temp;
-        }
-    }
+void	sb(t_stack *b)
+{
+	t_int	*temp;
+	t_int	*temp1;
+
+	if (b->head)
+	{
+		if (b->head->next)
+		{
+			temp = b->head;
+			temp1 = b->head->next->next;
+			b->head = b->head->next;
+			b->head->next = temp;
+			b->head->next->next = temp1;
+			temp = b->head;
+			while (temp->next)
+			{
+			temp = temp->next;
+			}
+			b->tail = temp;
+		}
+	}
 }
+
 /*
 int main(int argc, char *argv[])
 {

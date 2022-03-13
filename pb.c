@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/12 19:22:05 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 19:22:17 by gloyer-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void pb(t_stack *a, t_stack *b){
+void	pb(t_stack *a, t_stack *b)
+{
 	t_int	*temp;
 
 	temp = a->head->next;
@@ -12,11 +25,11 @@ void pb(t_stack *a, t_stack *b){
 	b->head = a->head;
 	a->head = temp;
 	temp = b->head;
-	while(temp->next)
+	while (temp->next)
 	{
 		temp = temp->next;
 	}
-	b->tail = temp; 
+	b->tail = temp;
 }
 
 /*

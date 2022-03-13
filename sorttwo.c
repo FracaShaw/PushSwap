@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sorttwo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 19:20:16 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/12 20:55:15 by gloyer-p         ###   ########.fr       */
+/*   Created: 2022/03/12 20:18:13 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/12 20:18:33 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	sorttwo(t_stack *a)
 {
-	t_stack	a;
+	int	aa;
+	int	ab;
 
-	a = create_stack_a(argc, argv);
-	if (!a.head)
-		return (0);
-	sorting_step1(&a, argc - 1);
+	aa = a->head->content;
+	ab = a->head->next->content;
+	if (aa > ab)
+	{
+		write(1, "ra\n", 3);
+	}
 }

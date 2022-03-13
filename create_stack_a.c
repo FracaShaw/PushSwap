@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gloyer-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:06:58 by gloyer-p          #+#    #+#             */
-/*   Updated: 2021/11/28 17:08:22 by gloyer-p         ###   ########.fr       */
+/*   Updated: 2022/03/12 19:20:00 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack	create_stack_a(int input_size, char **input)
 		free (array);
 		return (a);
 	}
-	cleanNeg(array, input_size -1);
+	cleanneg(array, input_size -1);
 	a = ft_array_to_lst_int(array, input_size - 1);
 	free (array);
 	if (!a.head)

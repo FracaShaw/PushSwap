@@ -1,49 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   issorted.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 19:30:33 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/14 17:48:29 by gloyer-p         ###   ########.fr       */
+/*   Created: 2022/03/13 16:02:44 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/14 16:23:36 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sorting_step1(t_stack *a, int input_size)
+int	issorted(t_stack *a, t_stack *b)
 {
-	if (input_size <= 1)
-		return ;
-	if (input_size == 2)
-	{
-		sorttwo(a);
-		return ;
-	}
-	if (input_size == 3)
-	{
-		sortthree_step1(a);
-		return ;
-	}
-	sorting_step2(a, input_size);
-}
+	t_int	*temp;
+	int		temp1;
 
-void	sorting_step2(t_stack *a, int input_size)
-{
-	if (input_size == 4)
+	temp = b->head;
+	temp1 = stacksize(a->head) + stacksize(b->head);
+	while (temp)
 	{
-		sortfour_step1(a);
-		return ;
+		if (temp->content > temp1)
+			return (0);
+		temp1 = temp->content;
+		temp = temp->next;
 	}
-	if (input_size == 5)
+	temp = a->head;
+	while (temp)
 	{
-		sortfive_step1(a);
-		return ;
+		if (temp->content < temp1)
+			return (0);
+		temp1 = temp->content;
+		temp = temp->next;
 	}
-	if (input_size > 5)
-	{
-		radix_step1(a);
-		return ;
-	}
+	return (1);
 }

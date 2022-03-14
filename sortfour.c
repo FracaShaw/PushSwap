@@ -6,7 +6,7 @@
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:21:15 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/12 20:40:19 by gloyer-p         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:44:21 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	sortfour_step3(t_stack *a, t_stack *b)
 	if (b->head->content <= a->tail->content
 		&& b->head->content >= a->head->next->content)
 	{
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 		rra(a);
 		write(1, "pa\n", 3);
 		pa(a, b);

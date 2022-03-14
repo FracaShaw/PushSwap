@@ -6,7 +6,7 @@
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:17:13 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/12 20:38:23 by gloyer-p         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:58:58 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void	sortfive_step2(t_stack *a, t_stack *b)
 
 void	sortfive_step3(t_stack *a, t_stack *b)
 {
-	if (b->head->content >= a->head->next->content
-		&& b->head->content <= a->head->next->next->content)
+	if (b->head->content > a->head->next->content
+		&& b->head->content < a->head->next->next->content)
 	{
-		write(1, "ra\nra\nsa\nrra\nrra\n", 17);
+		write(1, "ra\nra\npa\nrra\nrra\n", 17);
 		ra(a);
 		ra(a);
 		pa(a, b);
@@ -67,10 +67,10 @@ void	sortfive_step3(t_stack *a, t_stack *b)
 		rra(a);
 		return ;
 	}
-	if (b->head->content >= a->head->next->next->content
-		&& b->head->content <= a->tail->content)
+	if (b->head->content > a->head->next->next->content
+		&& b->head->content < a->tail->content)
 	{
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 		rra(a);
 		write(1, "pa\n", 3);
 		pa(a, b);

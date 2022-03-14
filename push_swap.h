@@ -6,7 +6,7 @@
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:38:26 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/13 14:20:16 by gloyer-p         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:45:53 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,11 @@ void	ssort_step2(t_stack *a, t_stack *b, int input_size);
 void	ssort_step3(t_stack *a, t_stack *b, int input_size, int j);
 void	ssort_step4(t_stack *a, t_stack *b, int input_size);
 int		stacksize(t_int *lst);
+void	radix_step1(t_stack *a);
+void	radix_step2(t_stack *a, t_stack *b, int y);
+void	radix_step3(t_stack *a, t_stack *b, int y);
+void	radix_step4(t_stack *a, t_stack *b, int y);
+int		issorted(t_stack *a, t_stack *b);
+void	print_stack(t_stack *a);
+void	free_stack(t_stack a);
 #endif

@@ -75,7 +75,7 @@ void	ssort_step4(t_stack *a, t_stack *b, int input_size)
 	write(1, "pb\n", 3);
 	pb(a, b);
 	if (a->head->next)
-		radix_step2(a, b, input_size);
+		ssort_step2(a, b, input_size);
 	else
 	{
 		while (input_size > 1)

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 19:20:16 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/14 18:01:18 by gloyer-p         ###   ########.fr       */
+/*   Created: 2022/03/14 16:34:06 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/14 16:47:30 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	free_stack(t_stack a)
 {
-	t_stack	a;
+	t_int	*temp;
 
-	a = create_stack_a(argc, argv);
-	if (!a.head)
-		return (0);
-	sorting_step1(&a, argc - 1);
-	free_stack(a);
+	while (a.head)
+	{
+		temp = a.head->next;
+		free (a.head);
+		a.head = temp;
+	}
 }

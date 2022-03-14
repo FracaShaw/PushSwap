@@ -6,12 +6,12 @@
 #    By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/17 11:51:35 by gloyer-p          #+#    #+#              #
-#    Updated: 2022/03/13 12:44:42 by gloyer-p         ###   ########.fr        #
+#    Updated: 2022/03/14 16:47:32 by gloyer-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = cleanNeg.c create_stack_a.c main.c pa.c pb.c ra.c rb.c rr.c rra.c rrb.c rrr.c sa.c sb.c sorting.c ss.c sortfive.c sortfour.c sortthree.c sorttwo.c sortmore.c stacksize.c
+SRCS = cleanNeg.c create_stack_a.c main.c pa.c pb.c ra.c rb.c rr.c rra.c rrb.c rrr.c sa.c sb.c sorting.c ss.c sortfive.c sortfour.c sortthree.c sorttwo.c sortmore.c stacksize.c radix_sort.c issorted.c print_stack.c free_stack.c
 
 OBJS	= ${SRCS:.c=.o}
 

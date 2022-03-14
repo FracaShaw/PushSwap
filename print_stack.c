@@ -1,49 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 19:30:33 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/14 17:48:29 by gloyer-p         ###   ########.fr       */
+/*   Created: 2022/03/13 17:17:27 by gloyer-p          #+#    #+#             */
+/*   Updated: 2022/03/14 16:30:13 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "push_swap.h"
 
-void	sorting_step1(t_stack *a, int input_size)
+void	print_stack(t_stack *a)
 {
-	if (input_size <= 1)
-		return ;
-	if (input_size == 2)
-	{
-		sorttwo(a);
-		return ;
-	}
-	if (input_size == 3)
-	{
-		sortthree_step1(a);
-		return ;
-	}
-	sorting_step2(a, input_size);
-}
+	t_int	*temp;
 
-void	sorting_step2(t_stack *a, int input_size)
-{
-	if (input_size == 4)
-	{
-		sortfour_step1(a);
+	temp = a->head;
+	if (!temp)
 		return ;
-	}
-	if (input_size == 5)
+	while (temp)
 	{
-		sortfive_step1(a);
-		return ;
-	}
-	if (input_size > 5)
-	{
-		radix_step1(a);
-		return ;
+		write(1, ft_itoa(temp->content), 1);
+		temp = temp->next;
 	}
 }

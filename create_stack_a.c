@@ -6,7 +6,7 @@
 /*   By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 13:06:58 by gloyer-p          #+#    #+#             */
-/*   Updated: 2022/03/12 19:20:00 by gloyer-p         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:03:24 by gloyer-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int	check_input(char **input, int *array)
 	int	i;
 	int	input_atoied;
 
-	check_input0(input);
+	if (!check_input0(input))
+		return (0);
 	i = 0;
 	while (input[i + 1])
 	{
@@ -68,6 +69,7 @@ t_stack	create_stack_a(int input_size, char **input)
 	if (!check_input(input, array))
 	{
 		free (array);
+		write(1, "Error\n", 7);
 		return (a);
 	}
 	cleanneg(array, input_size -1);

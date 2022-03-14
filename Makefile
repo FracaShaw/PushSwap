@@ -6,7 +6,7 @@
 #    By: gloyer-p <gloyer-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/17 11:51:35 by gloyer-p          #+#    #+#              #
-#    Updated: 2022/03/14 16:47:32 by gloyer-p         ###   ########.fr        #
+#    Updated: 2022/03/14 19:10:33 by gloyer-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS	= -g -Wall -Wextra -Werror
 
 INCLUDE = Push_swap.h
 
-NAME	= Push_swap
+NAME	= push_swap
 
 LIBFT 	= libft/libft.a
 
